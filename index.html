@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- https://fontawesome.com/v6.0/icons?m=free&s=regular -->
+    </head>
+
+    <body>
+
+        <div class="container">
+            <!-- Top row, Full Width -->
+            <div class="top-row">This is the top of the page. <i class="fa-solid fa-bomb"></i></div>
+
+            <!-- Side column -->
+            <div class="side-menu">item 1 - <i class="fa-solid fa-bolt"></i></div>
+
+            <!-- Content -->
+            <div class="content">
+                
+                <!-- Action Button Row-->
+                <div class="action-button-row">
+                    <div class="action-button-row-container">
+                        <div class="action-button"> <i class="fa-solid fa-campground"></i> </div>
+                        <div class="action-button"> <i class="fa-solid fa-binoculars"></i> </div>
+                        <div class="action-button"> <i class="fa-solid fa-caravan"></i> </div>
+                        <div class="action-button"> <i class="fa-solid fa-caravan"></i> </div>
+                    </div>
+                </div>
+
+            </div>            
+        </div>
+
+    </body>
+
+    <script>
+        const actionButtons = [...document.querySelectorAll('.action-button')];
+        
+        // Add mouse over 
+        actionButtons.forEach(item => item.addEventListener('mouseenter', function(el) {
+            //console.log(this);
+            //console.log(el);
+            this.classList.add('hover');
+        }));
+
+        // Add mouse out 
+        actionButtons.forEach(item => item.addEventListener('mouseleave', function(el) {
+            console.log(this);
+            console.log(el);
+            this.classList.remove('hover');
+        }));
+
+
+    </script>
+</html>
