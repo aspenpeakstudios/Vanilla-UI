@@ -18,12 +18,26 @@
             <div class="content">
                 
                 <!-- Action Button Row-->
-                <div class="action-button-row">
+                <div id="actionButtonRow" class="action-button-row">
+                    <h2>Choose an activity</h2>
                     <div class="action-button-row-container">
-                        <div class="action-button"> <i class="fa-solid fa-campground"></i> </div>
-                        <div class="action-button"> <i class="fa-solid fa-binoculars"></i> </div>
-                        <div class="action-button"> <i class="fa-solid fa-caravan"></i> </div>
-                        <div class="action-button"> <i class="fa-solid fa-caravan"></i> </div>
+                        <div class="action-button" data-value="campground"> <i class="fa-solid fa-campground"></i> </div>
+                        <div class="action-button" data-value="binoculars"> <i class="fa-solid fa-binoculars"></i> </div>
+                        <div class="action-button" data-value="maps"> <i class="fa-solid fa-map-location-dot"></i> </div>
+                        <div class="action-button" data-value="hiking"> <i class="fa-solid fa-person-hiking"></i> </div>
+                    </div>
+                </div>
+
+                <hr>
+
+                 <!-- Action Button Row-->
+                 <div id="actionButtonRow2" class="action-button-row">
+                    <h2>Choose an activity</h2>
+                    <div class="action-button-row-container">
+                        <div class="action-button" data-value="campground"> <i class="fa-solid fa-campground"></i> </div>
+                        <div class="action-button" data-value="binoculars"> <i class="fa-solid fa-binoculars"></i> </div>
+                        <div class="action-button" data-value="maps"> <i class="fa-solid fa-map-location-dot"></i> </div>
+                        <div class="action-button" data-value="hiking"> <i class="fa-solid fa-person-hiking"></i> </div>
                     </div>
                 </div>
 
@@ -32,23 +46,5 @@
 
     </body>
 
-    <script>
-        const actionButtons = [...document.querySelectorAll('.action-button')];
-        
-        // Add mouse over 
-        actionButtons.forEach(item => item.addEventListener('mouseenter', function(el) {
-            //console.log(this);
-            //console.log(el);
-            this.classList.add('hover');
-        }));
-
-        // Add mouse out 
-        actionButtons.forEach(item => item.addEventListener('mouseleave', function(el) {
-            console.log(this);
-            console.log(el);
-            this.classList.remove('hover');
-        }));
-
-
-    </script>
+    <script src="javascript.js"></script>
 </html>
