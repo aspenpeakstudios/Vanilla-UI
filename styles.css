@@ -1,4 +1,12 @@
-.body { padding: 0; margin: 0;}
+
+* {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.body { 
+    padding: 0; 
+    margin: 0;    
+}
 
 .container {
     display: grid;
@@ -26,6 +34,10 @@
     grid-row-start: 2;
     grid-column-start: 2;
     padding: 10px;
+}
+
+.hover {
+    background-color: rgb(232, 240, 255);    
 }
 
 
@@ -79,16 +91,22 @@
 .radio-button-table {
     display: flex;
     flex-direction: column;
-    border: 1px solid #ccc;
+    border: 0px solid #ccc;
     margin: 0 auto;
     width: 50vw;
+    padding: 40px;
 }
 
-.radio-button {
-    border: 1px solid crimson;
+.radio-button {   
+    border-bottom: 1px solid #ccc; 
     height: 4em;
     display: grid;
     grid-template-columns: 1fr 6fr;
+    transition: 0.3s background-color cubic-bezier(0.39, 0.575, 0.565, 1)
+}
+
+.radio-button:first-of-type {
+    border-top: 1px solid #ccc;
 }
 
 .radio-button .radio-button-circle {    
