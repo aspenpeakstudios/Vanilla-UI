@@ -131,10 +131,10 @@ RadioButtonTable.prototype.init = function() {
 
     // Add event handlers for hover effect
     radioButtonRows.forEach(item => item.addEventListener('mouseenter', function(e) {
-        this.classList.add('hover');
+        this.classList.add('hover-shadow');
     }));
     radioButtonRows.forEach(item => item.addEventListener('mouseleave', function(e) {
-        this.classList.remove('hover');
+        this.classList.remove('hover-shadow');
     }))
 
     // Add event handlers for click effect

@@ -6,10 +6,8 @@
 body {
     padding: 0; 
     margin: 0;    
-	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
-	animation: gradient 65s ease infinite;
-	height: 100vh;
+	background:  url('topo-map1.JPG');
+    background-size: 50% 50%; 
 }
 
 @keyframes gradient {
@@ -28,7 +26,11 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 100px 1fr;
-    height: 90vh;
+    
+
+    background: linear-gradient(-45deg, rgba(238,119,82, 0.7), #e73c7e, rgba(35,166,213, 0.8), #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 65s ease infinite;  
 }
 
 .top-row {
@@ -49,13 +51,29 @@ body {
     grid-row-start: 2;
     grid-column-start: 2;
     padding: 10px;
-    background:rgba(255, 255, 255, 0.7);  
+    background:rgb(231, 231, 231);  
     border-radius:5px;
     box-shadow: 0 0 4px #444;  
 }
 
 .hover {
     background-color: rgb(232, 240, 255);    
+    border-color: #444;      
+}
+
+.hover-shadow {
+    background-color: rgb(232, 240, 255);    
+    border-color: #444;
+    box-shadow: 0 0 4px #444; 
+    background-color: white;      
+}
+
+.hover-recessed {
+    background-color: rgb(232, 240, 255);    
+    border-color: #444;
+    box-shadow: inset 0 0 4px #444;
+    box-shadow: inset 0 0 8px 4px #ccc;  
+    border-radius: 2px;    
 }
 
 
@@ -142,8 +160,7 @@ body {
 .radio-button .radio-button-text, .check-box .check-box-text {    
     display: grid;
     justify-content: stretch;
-    align-items: center;
-    
+    align-items: center;    
     padding: 10px;
 }
 
