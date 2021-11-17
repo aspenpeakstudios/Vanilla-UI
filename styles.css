@@ -88,7 +88,7 @@
 
 /* Radio Button Table */
 
-.radio-button-table {
+.radio-button-table, .check-box-table {
     display: flex;
     flex-direction: column;
     border: 0px solid #ccc;
@@ -97,7 +97,7 @@
     padding: 40px;
 }
 
-.radio-button {   
+.radio-button, .check-box {   
     border-bottom: 1px solid #ccc; 
     height: 4em;
     display: grid;
@@ -105,21 +105,21 @@
     transition: 0.3s background-color cubic-bezier(0.39, 0.575, 0.565, 1)
 }
 
-.radio-button:first-of-type {
+.radio-button:first-of-type, .check-box:first-of-type {
     border-top: 1px solid #ccc;
 }
 
-.radio-button .radio-button-circle {    
+.radio-button .radio-button-circle,.check-box .check-box-square {    
     display:grid;
     justify-content: center;
     align-items: center;
 }
 
-.radio-button input[type='radio'] {
+.radio-button input[type='radio'], .check-box input[type='checkbox'] {
     transform: scale(2.5); 
 }
 
-.radio-button .radio-button-text {    
+.radio-button .radio-button-text, .check-box .check-box-text {    
     display: grid;
     justify-content: stretch;
     align-items: center;
@@ -127,7 +127,7 @@
     padding: 10px;
 }
 
-.radio-button .radio-button-text .title {   
+.radio-button .radio-button-text .title, .check-box .check-box-text .title {   
     font-size: 1.2em;
     font-weight: 700;
     display: flex;
@@ -135,13 +135,20 @@
     justify-content: space-between;    
 } 
 
-.radio-button .radio-button-text .title .add-on {   
+.radio-button .radio-button-text .title .add-on, .check-box .check-box-text .title .add-on {   
     font-size: 0.9em;
     font-weight: 100;
     color: #777;
 }
 
-.radio-button .radio-button-text .sub-title { 
+.radio-button .radio-button-text .sub-title, .check-box .check-box-text .sub-title { 
     font-size: 0.9em;
     color: #777;   
+}
+
+.total-bill { 
+    margin: 10px;
+    display: flex;
+    justify-content: end;
+    font-size: 1.2em;
 }
