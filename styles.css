@@ -3,17 +3,32 @@
     font-family: 'Roboto Condensed', sans-serif;
 }
 
-.body { 
+body {
     padding: 0; 
     margin: 0;    
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 65s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 .container {
     display: grid;
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 100px 1fr;
     height: 90vh;
-
 }
 
 .top-row {
@@ -30,10 +45,13 @@
 }
 
 .content {
-    border: 1px solid #ccc;
+    border: 0px solid #ccc;
     grid-row-start: 2;
     grid-column-start: 2;
     padding: 10px;
+    background:rgba(255, 255, 255, 0.7);  
+    border-radius:5px;
+    box-shadow: 0 0 4px #444;  
 }
 
 .hover {
@@ -92,13 +110,15 @@
     display: flex;
     flex-direction: column;
     border: 0px solid #ccc;
-    margin: 0 auto;
+    margin: 10px auto;
     width: 50vw;
-    padding: 40px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
 }
 
 .radio-button, .check-box {   
-    border-bottom: 1px solid #ccc; 
+    border-bottom: 1px solid #999;
     height: 4em;
     display: grid;
     grid-template-columns: 1fr 6fr;
@@ -106,7 +126,7 @@
 }
 
 .radio-button:first-of-type, .check-box:first-of-type {
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #999;
 }
 
 .radio-button .radio-button-circle,.check-box .check-box-square {    

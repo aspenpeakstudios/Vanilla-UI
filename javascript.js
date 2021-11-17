@@ -100,7 +100,7 @@ const checkBoxTableData1 = {
         {title:'Two Ski Brewski Pilsner',  value:'1', price:3.75},
         {title:'Snow Slip Stout', subtext:'5.0% ABV', value:'2', price:4.25},
         {title:'Cloudcroft IPA', subtext:'7.3% ABV', addOn:'$5.00', value:'3', price:5.00},
-        {title:'Vintage Imperial Stout', subtext:'9.3% ABV | 70 IBU', addOn:'$6.00', value:'4', price:6.00},
+        {title:'Vintage Imperial Stout', subtext2:'9.3% ABV | 70 IBU', addOn:'$6.00', value:'4', price:6.00},
     ]
 };
 var checkBoxTable1 = new CheckBoxTable(document.getElementById('checkBoxTable1'), checkBoxTableData1);
