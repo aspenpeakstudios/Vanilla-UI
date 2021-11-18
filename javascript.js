@@ -1,4 +1,12 @@
 
+/// Global
+document.querySelector('.content').addEventListener('click', function() {
+    let sidebar = document.querySelector('.side-bar');
+    sidebar.classList.toggle('active');
+    console.log("toggle");
+})
+
+
 
 // Radio Button Table Component
 function CheckBoxTable(el, data) {
@@ -7,7 +15,7 @@ function CheckBoxTable(el, data) {
     this.init();    
 }
 
-CheckBoxTable.prototype.init = function() {
+CheckBoxTable.prototype.init = function() {    
     // Create child elements as necessary
     console.log(this.data);
     if (this.data) {
@@ -16,7 +24,7 @@ CheckBoxTable.prototype.init = function() {
             console.log(html);
             this.container.innerHTML += html;
         })
-        this.container.innerHTML +=     `<div><span class='total-bill'>$0.00</span></div>`;        
+        this.container.innerHTML +=     `<div><span class='total-bill'>$0.00</span></div>`;          
     }
 
     const container = this.container;
