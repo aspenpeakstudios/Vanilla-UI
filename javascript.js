@@ -1,10 +1,15 @@
 
 /// Global
-document.querySelector('.content').addEventListener('click', function() {
+document.querySelector('.side-bar-toggle').addEventListener('click', function() {
     let sidebar = document.querySelector('.side-bar');
     sidebar.classList.toggle('active');
     console.log("toggle");
-})
+});
+document.querySelector('.side-bar-close').addEventListener('click', function() {
+    let sidebar = document.querySelector('.side-bar');
+    sidebar.classList.toggle('active');
+    console.log("toggle");
+});
 
 
 

@@ -10,6 +10,17 @@ body {
     background-size: 50% 50%; 
 }
 
+h2 {
+    text-shadow: 
+        0 1px 0px #aaa,
+        1px 0 0px #999,
+        1px 2px 1px #aaa,
+        2px 1px 1px #999,
+        2px 3px 1px #aaa,
+        3px 1px 1px #999;
+
+}
+
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;
@@ -212,5 +223,26 @@ body {
 
  .side-bar.active {
     transform: translateX(0%);
+}
+
+.side-bar-toggle {
+    float: right;
+    padding:10px;
+    font-size: 1.5em;
+    cursor: pointer;    
+}
+
+.side-bar-close {    
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    font-size: 1.5em;
+    color: forestgreen;
+    transition: 0.2s all;
+}
+
+.side-bar-close:hover {    
+    transform: scale(1.2);    
+    cursor: pointer;
 }
 
