@@ -265,7 +265,7 @@ h2 {
 }
 
 .side-bar-close:hover {    
-    t1ransform: scale(1.2);    
+    transform: scale(1.2);    
     cursor: pointer;
 }
 
