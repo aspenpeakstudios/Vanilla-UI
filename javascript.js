@@ -2,12 +2,16 @@
 /// Global
 document.querySelector('.side-bar-toggle').addEventListener('click', function() {
     let sidebar = document.querySelector('.side-bar');
-    sidebar.classList.toggle('active');
+    sidebar.classList.toggle('active');    
+    this.classList.toggle('active');
     console.log("toggle");
 });
 document.querySelector('.side-bar-close').addEventListener('click', function() {
     let sidebar = document.querySelector('.side-bar');
     sidebar.classList.toggle('active');
+
+    let sideBarToggle = document.querySelector('.side-bar-toggle');
+    sideBarToggle.classList.toggle('active');
     console.log("toggle");
 });
 

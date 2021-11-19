@@ -1,3 +1,8 @@
+:root {
+    --light-gray: #ccc;
+    --lighter-gray:#ddd;
+}
+
 
 * {
     font-family: 'Roboto Condensed', sans-serif;
@@ -13,11 +18,11 @@ body {
 h2 {
     text-shadow: 
         0 1px 0px #aaa,
-        1px 0 0px #999,
+        1px 0 0px var(--light-gray),
         1px 2px 1px #aaa,
-        2px 1px 1px #999,
+        2px 1px 1px var(--light-gray),
         2px 3px 1px #aaa,
-        3px 1px 1px #999;
+        3px 1px 1px var(--light-gray);
 
 }
 
@@ -206,7 +211,7 @@ h2 {
 .side-bar {
     width: 25vw;
     height: 100vh;
-    background-color: rgba(255, 255, 255, 1);   
+    background-color: rgba(255, 255, 255, 1);       
     position: fixed;    
     top: 0;  
     right: 0;
@@ -229,7 +234,7 @@ h2 {
 	}
 
 	100% {		
-		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+		box-shadow: 0 0 0 0px rgba(0, 0, 0, 0);
 	}
 }
 
@@ -238,6 +243,7 @@ h2 {
     box-shadow: 0px -4px 10px #444;
     border-left: 1px solid #444;    
     animation: none;
+    background: rgba(255, 255, 255, 1);   
 }
 
 .side-bar div { 
@@ -250,9 +256,17 @@ h2 {
  
 .side-bar-toggle {
     float: right;
-    padding:10px;
+    padding:0px;
+    margin:0px;
     font-size: 1.5em;
-    cursor: pointer;    
+    cursor: pointer;   
+    transition: 0.5s; 
+    padding:10px;
+}
+
+.side-bar-toggle.active {
+    transform: rotateZ(-90deg);
+    transform-origin: center;        
 }
 
 .side-bar-close {    
