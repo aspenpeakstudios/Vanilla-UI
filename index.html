@@ -9,102 +9,90 @@
         
     </head>
 
-    <body>
+    <body>     
 
-        <div class="container">
-            
+        <div class="container">          
+
+            <!-- Sidebar -->
+            <div class="left-side-bar">
+                <h2>Contents</h2>
+                <hr>
+                <ul>
+                    <li class="toc-element" data-id="checkBoxTable1Container">Check Box Table</li>
+                    <li class="toc-element" data-id="radioButtonTable11Container" >Radio Button Table</li>
+                    <li class="toc-element" data-id="actionButtonRow1Container" >Action Button Row</li>
+                    <li class="toc-element" data-id="actionButtonRow2Container" >Action Button Row - Multiselect</li>
+                </ul>
+            </div>
+
+            <div id="sidebar" class="side-bar">
+                <div class='side-bar-close'>
+                    <i class="far fa-arrow-alt-circle-left"></i>
+                </div>
+                <hr>
+                <h2>Contact Details</h2>
+                <hr>
+                <div><label>Name</label><input type='text'/></div>
+                <div><label>Title</label><input type='text'/></div>
+                <div><label>Address</label><input type='text'/></div>
+                <div><label>Hours</label><input type='number'/></div>
+                <hr>
+            </div>
+                
             <!-- Content -->
             <div class="content">
                 <div class='side-bar-toggle'>
                     <i class="fa-solid fa-ellipsis"></i>
                 </div>
-
-                <div id="sidebar" class="side-bar">
-                    <div class='side-bar-close'>
-                        <i class="far fa-arrow-alt-circle-left"></i>
-                    </div>
-                    <hr>
-                    <h2>Contact Details</h2>
-                    <hr>
-                    <div><label>Name</label><input type='text'/></div>
-                    <div><label>Title</label><input type='text'/></div>
-                    <div><label>Address</label><input type='text'/></div>
-                    <div><label>Hours</label><input type='number'/></div>
-                    <hr>
-                </div>
+               
               
                  <!-- Check Box Table -->
-                 <h2>Check Box Table</h2>
-                 <div id="checkBoxTable1" class="check-box-table"></div>
+                 <div id="checkBoxTable1Container" class="component-container">
+                    <h2>Check Box Table</h2>
+                    <div id="checkBoxTable1" class="component check-box-table"></div>
+                 </div>
 
                 <!-- Radio Button table -->
-                <h2>Radio Button Table</h2>
-                <div id="radioButtonTable1" class="radio-button-table">
-                    <!--<div class='radio-button' data-value="Item 1">
-                        <div class='radio-button-circle'>
-                            <input type="radio"/>
-                        </div>
-                        <div class='radio-button-text'>
-                            <span class='title'> Item 1 </span>
-                        </div>
-                    </div>
-                    <div class='radio-button' data-value="Item 2">
-                        <div class='radio-button-circle'>
-                            <input type="radio" />
-                        </div>
-                        <div class='radio-button-text'>
-                            <span class='title'> Item 2 </span>
-                            <span>Subtext for Item 2</span>
-                        </div>
-                    </div>
-                    <div class='radio-button' data-value="Item 3">
-                        <div class='radio-button-circle'>
-                            <input type="radio"/>
-                        </div>
-                        <div class='radio-button-text'>
-                            <div class='title'>
-                                <span>Item 3</span>
-                                <span class='add-on'>$2.00</span> 
-                            </div>
-                            <div class='sub-title'>
-                                <span>Subtext for Item 3</span>
-                            </div>
-                        </div>
-                    </div>-->
+                <div id="radioButtonTable11Container" class="component-container">
+                    <h2>Radio Button Table</h2>
+                    <div id="radioButtonTable1" class="component radio-button-table"></div>
                 </div>
 
-                <hr>
+             
                 
                 <!-- Action Button Row -->
+                <div id="actionButtonRow1Container" class="component-container">
                 <h2>Action Button Row</h2>
-                <div id="actionButtonRow" class="action-button-row">
-                    <h2>Choose an activity</h2>
-                    <div class="action-button-row-container">
-                        <div class="action-button" data-value="campground"> <i class="fa-solid fa-campground"></i> </div>
-                        <div class="action-button" data-value="binoculars"> <i class="fa-solid fa-binoculars"></i> </div>
-                        <div class="action-button" data-value="maps"> <i class="fa-solid fa-map-location-dot"></i> </div>
-                        <div class="action-button" data-value="hiking"> <i class="fa-solid fa-person-hiking"></i> </div>
+                    <div id="actionButtonRow" class="component action-button-row">
+                        <h2>Choose an activity</h2>
+                        <div class="action-button-row-container">
+                            <div class="action-button" data-value="campground"> <i class="fa-solid fa-campground"></i> </div>
+                            <div class="action-button" data-value="binoculars"> <i class="fa-solid fa-binoculars"></i> </div>
+                            <div class="action-button" data-value="maps"> <i class="fa-solid fa-map-location-dot"></i> </div>
+                            <div class="action-button" data-value="hiking"> <i class="fa-solid fa-person-hiking"></i> </div>
+                        </div>
+                        <p name="activities"> None </p>
                     </div>
-                    <p name="activities"> None </p>
                 </div>
 
-                <hr>
+              
 
                  <!-- Action Button Row -->
-                 <h2>Action Button Row - Multiselect</h2>
-                 <div id="actionButtonRow2" class="action-button-row">
-                    <h2>Choose an activity</h2>
-                    <div class="action-button-row-container">
-                        <div class="action-button" data-value="campground"> <i class="fa-solid fa-campground"></i> </div>
-                        <div class="action-button" data-value="binoculars"> <i class="fa-solid fa-binoculars"></i> </div>
-                        <div class="action-button" data-value="maps"> <i class="fa-solid fa-map-location-dot"></i> </div>
-                        <div class="action-button" data-value="hiking"> <i class="fa-solid fa-person-hiking"></i> </div>
+                 <div id="actionButtonRow2Container" class="component-container">
+                    <h2>Action Button Row - Multiselect</h2>
+                    <div id="actionButtonRow2" class="component action-button-row">
+                        <h2>Choose an activity</h2>
+                        <div class="action-button-row-container">
+                            <div class="action-button" data-value="campground"> <i class="fa-solid fa-campground"></i> </div>
+                            <div class="action-button" data-value="binoculars"> <i class="fa-solid fa-binoculars"></i> </div>
+                            <div class="action-button" data-value="maps"> <i class="fa-solid fa-map-location-dot"></i> </div>
+                            <div class="action-button" data-value="hiking"> <i class="fa-solid fa-person-hiking"></i> </div>
+                        </div>
+                        <p name="activities"> None </p>
                     </div>
-                    <p name="activities"> None </p>
                 </div>
 
-                <hr>
-
+              
              
             </div>            
         </div>

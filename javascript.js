@@ -269,10 +269,29 @@ ActionButtonRow.prototype.init = function() {
     }    
 };
 
+/* START UP */
 
 // Create our new components
 var actionButtonRow = new ActionButtonRow(document.getElementById('actionButtonRow'), false);
 var actionButtonRow2 = new ActionButtonRow(document.getElementById('actionButtonRow2'), true);
+
+console.log("--- Table of Contents ---");
+
+// Hide the components
+var components = document.querySelectorAll('.component-container');
+components.forEach( item => item.classList.add('hidden'));
+
+// Event listener to show/hide components
+var tableOfContents = document.querySelectorAll('.toc-element');
+tableOfContents.forEach(item => {  
+    item.addEventListener('click', function() {
+        // hide all items
+        components.forEach(i => i.classList.add('hidden'));
+        // remove hidden from current item
+        var id = item.dataset.id;    
+        (id && document.querySelector(`#${id}`).classList.toggle('hidden'));            
+    })
+});
 
 
 // ---------------------------------------------------------------------------------
