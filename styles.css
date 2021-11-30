@@ -40,7 +40,7 @@ h2 {
 
 .container {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 3fr minmax(0, 1fr); 
+    grid-template-columns: minmax(0, 1fr) 4fr minmax(0, 1fr); 
     /* https://stackoverflow.com/questions/43311943/prevent-content-from-expanding-grid-items */    
     /* Unsure why exactly but minmax(0, 1fr) keeps the side columns equal regardless of their content. */
     
@@ -52,7 +52,7 @@ h2 {
 	background-size: 400% 400%;
 	animation: gradient 65s ease infinite;  
 
-    /*overflow: hidden;  */
+    overflow: hidden;  
 }
 
 .content {
@@ -323,3 +323,58 @@ h2 {
     font-size: 1.2em;
 }
 
+/* Calendar Event Card */
+.calendar-event-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr 3fr;
+    grid-template-rows: 1;
+
+    border: 1px solid #444;
+    box-shadow: 0 0 4px #444;
+
+    padding: 10px;
+
+    background: white;
+}
+
+.calendar-event-card .date {
+    grid-column-start: 1;
+    border: 0px solid green;
+
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+
+.calendar-event-card .divider { 
+    grid-column-start: 2;
+
+    display: grid;
+    grid-template-rows: 1em 1fr 1em;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar-event-card .divider span { 
+    border-left: 1px solid black;
+    content:'';
+}
+
+.calendar-event-card .details {    
+    grid-column-start: 3;
+    border: 0px solid red;
+
+    display: grid;
+    grid-template-rows: repeat (1fr );
+    justify-content: start;
+    align-items: center;
+}
+
+.calendar-event-card .details span:nth-child(1) {
+    font-weight: bold;
+}

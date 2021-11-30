@@ -4,7 +4,7 @@ document.querySelector('.side-bar-toggle').addEventListener('click', function() 
     let sidebar = document.querySelector('.side-bar');
     sidebar.classList.toggle('active');    
     this.classList.toggle('active');
-    console.log("toggle");
+    //console.log("toggle");
 });
 document.querySelector('.side-bar-close').addEventListener('click', function() {
     let sidebar = document.querySelector('.side-bar');
@@ -12,7 +12,7 @@ document.querySelector('.side-bar-close').addEventListener('click', function() {
 
     let sideBarToggle = document.querySelector('.side-bar-toggle');
     sideBarToggle.classList.toggle('active');
-    console.log("toggle");
+    //console.log("toggle");
 });
 
 
@@ -26,11 +26,11 @@ function CheckBoxTable(el, data) {
 
 CheckBoxTable.prototype.init = function() {    
     // Create child elements as necessary
-    console.log(this.data);
+    //console.log(this.data);
     if (this.data) {
         this.data.items.forEach(item => {
             let html = this.renderRow(item);
-            console.log(html);
+            //console.log(html);
             this.container.innerHTML += html;
         })
         this.container.innerHTML +=     `<div><span class='total-bill'>$0.00</span></div>`;          
@@ -57,7 +57,7 @@ CheckBoxTable.prototype.init = function() {
                                     }));
 
     function handleMouseClick(e) {              
-        console.log("handleMouseClick");
+        //console.log("handleMouseClick");
 
         // find the checkbox and make sure it is clicked.
         let checkBox = this.querySelector('input[type=checkbox]');
@@ -66,13 +66,13 @@ CheckBoxTable.prototype.init = function() {
         let selections = checkBoxRows  
                             .filter(item => item.querySelector('input[type=checkbox]').checked)
                             .reduce((result, item) => {
-                                console.log("Current Total: " + result + ", " + item.dataset.price);
+                                //("Current Total: " + result + ", " + item.dataset.price);
                                 return Number(result) + Number(item.dataset.price);
                             }, 0);       
 
         // Capture the Title of this checkbox
         let title = this.dataset.value;
-        console.log(title + " - " + selections);
+        //console.log(title + " - " + selections);
 
         let formattedBill = "$" + selections.toLocaleString("en-US", { maximumFractionDigits: 2, minimumFractionDigits: 2 });
         container.querySelector('.total-bill').innerHTML = formattedBill;
@@ -135,11 +135,11 @@ function RadioButtonTable(el, data) {
 
 RadioButtonTable.prototype.init = function() {
     // Create child elements as necessary
-    console.log(this.data);
+    //console.log(this.data);
     if (this.data) {
         this.data.items.forEach(item => {
             let html = this.renderRow(item);
-            console.log(html);
+            //console.log(html);
             this.container.innerHTML += html;
         })
     }
@@ -167,7 +167,7 @@ RadioButtonTable.prototype.init = function() {
 
         // Capture the Title of this radiobutton
         let title = this.dataset.value;
-        console.log(title);
+        //console.log(title);
     }
 }
 
@@ -247,7 +247,7 @@ ActionButtonRow.prototype.init = function() {
 
     // Do stuff when item is clicked
     function handleMouseClick(el, allowMultiple) {
-        console.log("Allow Multiple Selections: " + allowMultiple);
+        //console.log("Allow Multiple Selections: " + allowMultiple);
 
         let activities = "";
 
@@ -264,7 +264,7 @@ ActionButtonRow.prototype.init = function() {
                         .replace(/^(, )/,"");                                                       // Remove the leading comma-space.
         
         // Update the activity list on the screen so user can see what they clicked.
-        console.log(activities);  
+        //console.log(activities);  
         activityList.innerHTML = activities;  
     }    
 };
@@ -275,23 +275,38 @@ ActionButtonRow.prototype.init = function() {
 var actionButtonRow = new ActionButtonRow(document.getElementById('actionButtonRow'), false);
 var actionButtonRow2 = new ActionButtonRow(document.getElementById('actionButtonRow2'), true);
 
-console.log("--- Table of Contents ---");
+//console.log("--- Table of Contents ---");
 
 // Hide the components
 var components = document.querySelectorAll('.component-container');
 components.forEach( item => item.classList.add('hidden'));
 
-// Event listener to show/hide components
-var tableOfContents = document.querySelectorAll('.toc-element');
-tableOfContents.forEach(item => {  
-    item.addEventListener('click', function() {
-        // hide all items
-        components.forEach(i => i.classList.add('hidden'));
-        // remove hidden from current item
-        var id = item.dataset.id;    
-        (id && document.querySelector(`#${id}`).classList.toggle('hidden'));            
-    })
-});
+
+// Automate the table of contents
+// -- <li class="toc-element" data-id="checkBoxTable1Container">Check Box Table</li>
+let tocHtml = [... components].reduce((result, item) => {    
+    let heading = item.querySelector('h2')
+    if (heading) { heading = heading.innerText; }
+
+    // Generate the html for this item.  If item is missing data, don't generate anything.
+    let html = (heading !== null ? `<li class='toc-element' data-id='${item.id}'>${heading}</li>` : "");    
+
+    return result + html;
+ }, "");
+ 
+ 
+// Event Delegation method to handle dynamically generated items
+function showComponent(e) {    
+    // hide all items
+    components.forEach(i => i.classList.add('hidden'));
+    // remove hidden from current item
+    var id = e.target.dataset.id;    
+    (id && document.querySelector(`#${id}`).classList.toggle('hidden'));      
+}
+
+const toc = document.querySelector('#toc') 
+toc.innerHTML = tocHtml;
+toc.addEventListener("click", showComponent)
 
 
 // ---------------------------------------------------------------------------------
