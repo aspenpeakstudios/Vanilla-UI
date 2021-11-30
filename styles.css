@@ -326,7 +326,7 @@ h2 {
 /* Calendar Event Card */
 .calendar-event-card {
     display: grid;
-    grid-template-columns: 1fr 2rem 0.25fr 4fr;
+    grid-template-columns: 1fr 2rem 0.25fr 3fr 1fr;
     grid-template-rows: 1;
 
     /*border: 1px solid #444;*/
@@ -389,4 +389,22 @@ h2 {
 
 .calendar-event-card .details span:nth-child(1) {
     font-weight: bold;
+}
+
+.calendar-event-card .image {
+    height: 90px;
+    width: 90px;
+    border: 4px solid white;
+    grid-column-start: 5;
+    justify-self: end;
+    transform: rotate(3deg);    
+}
+
+.calendar-event-card img { 
+    height: 100%;
+    width: 100%;
+}
+
+.box-shadow {
+    box-shadow: 1px 1px 6px #444;
 }
