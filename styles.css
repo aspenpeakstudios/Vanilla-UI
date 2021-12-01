@@ -48,8 +48,13 @@ h2 {
     grid-gap: 20px;
     height: 100vh;    
 
-    background: linear-gradient(-45deg, rgba(238,119,82, 0.7), #e73c7e, rgba(35,166,213, 0.8), #23d5ab);
-	background-size: 400% 400%;
+    /* Background 1: Trippy 
+    background: linear-gradient(-45deg, rgba(238,119,82, 0.7), #e73c7e, rgba(35,166,213, 0.8), #23d5ab); 
+    background-size: 400% 400%; */
+
+    /* Background 2: Bluewave */
+    background: linear-gradient(45deg,  #42a5f5 0%,#478ed1 50%,#0d47a1 100%);
+	
 	animation: gradient 65s ease infinite;  
 
     overflow: hidden;  
