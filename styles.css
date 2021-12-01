@@ -129,12 +129,12 @@ h2 {
     background: rgba(255, 255, 255, 1);   
 }
 
-.side-bar div { 
+/* .side-bar div { 
     display: grid;
     grid-template-columns: 60px 1fr;   
     grid-auto-rows: 1fr;  
     margin: 20px;
-}
+} */
 
  
 .side-bar-toggle {
@@ -407,4 +407,60 @@ h2 {
 
 .box-shadow {
     box-shadow: 1px 1px 6px #444;
+}
+
+
+/* PROGRESS BAR */
+
+.progress {
+    display: block;
+    /* height:100px; */
+    /* position:relative; */
+    background: white;
+    padding:10px;
+}
+
+.progress > span {
+    display: block;
+    height: 100%;
+    background:white;
+    padding:5px;
+    color: white;
+    height: 20px;
+}
+
+.progress > span.primary {
+    background:  #23A6D5;
+    width:95%;
+    height:100px;
+}
+
+.progress > span.secondary {
+    background:  #4AB9E1;
+    width:80%;
+    height:60px;
+}
+
+.progress > span.tertiary {
+    background: #D55223;
+    width: 60%;
+}
+
+.progress > span.accent {
+    background:  #D523A6;
+    width:20%;
+}
+
+/* Color Palette overrides  */
+h2 {
+    color: #D55223;
+    text-shadow: none;
+}
+
+.action-button.pressed {
+    background-color: #23A6D5;
+}
+
+.action-button:hover {
+    background-color: #4AB9E1;
 }
