@@ -1,0 +1,240 @@
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&family=Roboto+Condensed:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
+
+        <style>
+            *, *:before, *:after { 
+                box-sizing: border-box;
+            }
+                        
+            * {
+                font-family: 'Oswald', sans-serif;
+            }
+
+            body { 
+                overflow-x:hidden;
+            }
+
+            h1 { font-size: 4rem;}
+
+            h2 { font-family: 'Roboto Condensed', sans-serif; }
+
+            section {                 
+                /* border: 1px solid #ccc; */
+                overflow-x:hidden;
+                min-height: 34rem;
+            }
+
+            .name-wrapper { 
+                min-height: 24rem; 
+                display: flex;
+                align-items:center;
+                justify-content: center;
+            }
+
+            .name-and-title-container {                
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                /* border: 1px solid green; */
+            }
+
+            /* 
+                Masonary with Horizontal 
+                https://css-tricks.com/piecing-together-approaches-for-a-css-masonry-layout/
+                https://philipwalton.github.io/solved-by-flexbox/
+                https://coryrylan.com/blog/css-gap-space-with-flexbox
+            */
+            .masonry-with-columns {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 30px;
+                margin-left: -20px;
+                margin-right: -20px;
+                overflow-x:hidden;
+
+                background-color: #f3f3f3;
+                padding-top: 30px;
+                padding-bottom: 30px;
+            }
+            .masonry-with-columns div {
+                border-radius: 0px;
+                min-width: 250px;
+                height: 350px;
+                line-height: 150px;
+                background: #EC985A;
+                color: white;
+                /* margin: 0 1rem 1rem 0; */
+                text-align: center;
+                font-family: system-ui;
+                font-weight: 900;
+                font-size: 2rem;
+                flex: 1 0 auto;
+                /* margin-bottom: 10px; */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                overflow: hidden;
+                background-size: cover;
+                /* box-shadow: 1px 1px 2px 2px #999; */
+
+                transform: skewX(-4deg);
+            }
+
+            /* .masonry-with-columns img {
+                height: 100%;
+                width: 100%;
+                display: block;
+                /* object-fit:cover; */
+            } */
+
+            /* Row 1 - 30/70 */
+            .masonry-with-columns div:nth-child(1) {
+                width: calc(100% / 7);
+                min-width: calc(30%);
+            }
+            .masonry-with-columns div:nth-child(2) {
+                width: calc(100% / 3);
+                min-width: calc(60%);
+            }
+            /* Row 2  - 70/30 */
+            .masonry-with-columns div:nth-child(3) {
+                width: calc(100% / 3);
+                min-width: calc(60%);
+            }
+            .masonry-with-columns div:nth-child(4) {
+                width: calc(100% / 7);
+                min-width: calc(30%);
+            }
+            /* Row 3 - 50/50 */
+            .masonry-with-columns div:nth-child(5) {
+                width: calc(100% / 5);
+                min-width: calc(45%);
+            }
+            .masonry-with-columns div:nth-child(6) {
+                width: calc(100% / 5);
+                min-width: calc(45%);
+            }
+            /* Row 4 - 30/70 */
+            .masonry-with-columns div:nth-child(7) {
+                width: calc(100% / 7);
+                min-width: calc(30%);
+            }
+            .masonry-with-columns div:nth-child(8) {
+                width: calc(100% / 3);
+                min-width: calc(60%);
+            }
+            /* Row 5 - 50/50 */
+            .masonry-with-columns div:nth-child(9) {
+                width: calc(100% / 5);
+                min-width: calc(45%);
+            }
+            .masonry-with-columns div:nth-child(10) {
+                width: calc(100% / 5);
+                min-width: calc(45%);
+            }
+            /* Row 6 - 70 / 30 */
+            .masonry-with-columns div:nth-child(11) {
+                width: calc(100% / 7);
+                min-width: calc(30%);
+            }
+            .masonry-with-columns div:nth-child(12) {
+                width: calc(100% / 3);
+                min-width: calc(60%);
+            }
+            /* Row 7 - 50/25/25 */
+            .masonry-with-columns div:nth-child(13) {
+                width: calc(30%);
+            }
+            .masonry-with-columns div:nth-child(14) {
+                width: calc(30%);
+            }
+            .masonry-with-columns div:nth-child(15) {
+                width: calc(30%);
+            }
+            /* Row 8 - 100 */
+            .masonry-with-columns div:nth-child(16) {
+                width: calc(100%);
+            }
+
+        </style>
+
+    </head>
+
+    <!-- 
+    <notes>
+        1.  Fade in content
+        2.  Full page image grid
+        3.  Social Icons (Instagram, Email, Unsplash )
+    </notes>
+    -->
+
+    <body>
+
+        <!-- Section 1:  Name & Title -->
+        <section class='name-wrapper'>
+            <div class="name-and-title-container">
+                <h1>Kathy Davig</h1>
+                <h2>Artist in Bozeman, Montana</h2>                
+            </div>
+        </section>
+
+        <!-- Section 2:  Grid -->
+        <!--  
+            [ 40 ] [ 60 ]
+            [ 60 ] [ 40 ]
+            [ 50 ] [ 50 ]
+            [ 40 ] [ 60 ]
+            [ 50 ] [ 50 ]
+            [ 60 ] [ 40 ]
+            [ 50 ] [ 25 ] [ 25 ]
+            [ 100 ]
+        -->
+        <section class='masonry-with-columns'>
+            <div class="item">1</div>
+            <div class="item">2</div>
+
+            <div class="item">3</div>
+            <div class="item">4</div>
+
+            <div class="item">5</div>
+            <div class="item">6</div>
+
+            <div class="item">7</div>
+            <div class="item">8</div>
+
+            <div class="item">9</div>
+            <div class="item">10</div>
+
+            <div class="item">11</div>
+            <div class="item">12</div>
+
+            <div class="item">13</div>
+            <div class="item">14</div>
+            <div class="item">15</div>
+
+            <div class="item">16</div>
+        </section>
+
+        <!-- Section 3:  About and Contact -->
+        <section>
+        </section>
+
+    </body>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="utility.js"></script>
+    <script>
+
+        const images = Array.from(document.querySelectorAll('.item'));
+
+         // Load the image containers
+         loadImages(images);
+
+    </script>
+</html>

@@ -58,6 +58,19 @@ h2 {
 	animation: gradient 65s ease infinite;  
 
     overflow: hidden;  
+
+    /* Multi-word Edit
+        CTRL+D = multi-word edit.  import comments from 'comments';  */
+
+    /* Multi-line-cursor 
+        CTRL + Click
+        This is a test
+        This is another test   */ 
+
+    /* Muti-line-replace
+        SHIFT + ALT + Click
+        These are the comments
+        These are morecomments    */
 }
 
 .content {
