@@ -103,6 +103,26 @@ h2 {
     border-radius: 2px;    
 }
 
+/* FAV */
+.fav-wrapper {
+    position: fixed;
+    border-radius: 50%;
+    background-color: white;
+    color: black;
+    bottom: 5%;
+    right: 5%;
+    padding:10px;
+    box-shadow: 0 0 15px 3px #444;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 2.75em;
+    transition: 0.3s all;
+}
+.fav-wrapper:hover { 
+    background-color: orange;
+    color: white;
+    text-shadow: 1px 1px 4px #777;
+}
 
 
 /* SIDE BAR */
